@@ -2,14 +2,19 @@
 namespace Theme\Boot\Http\Part;
 
 use Theme\Boot\Http\Repository\PostRepository;
+use Theme\Boot\Http\Service\PageService;
 
-class ProgramsOffer
+class ProgramsOfferCustom
 {
     private $podsIds;
+
+    private $pageService;
 
     public function __construct(array $params)
     {
         $this->podsIds = (array) ($params["postIds"] ?? []);
+
+        $this->pageService = new PageService();
     }
 
     /**
@@ -18,13 +23,12 @@ class ProgramsOffer
      */
     public function getProgramsOfferPost()
     {
-        return PostRepository::getInstance()->queryPosts($this->podsIds);
+        return $this->pageService->getProgramsOfferPost($this->podsIds);
     }
 }
 
-// [1872, 1877]
+$programsOfferCustom = new ProgramsOfferCustom($args ?? []);
 
-$programsOffer = new ProgramsOffer($args ?? []);
 ?>
 
 <section class="home-blog section-padding">
@@ -40,16 +44,16 @@ $programsOffer = new ProgramsOffer($args ?? []);
             </div>
         </div>
         <div class="row">
-            <?php foreach ($programsOffer->getProgramsOfferPost() as $item): ?>
+            <?php foreach ($programsOfferCustom->getProgramsOfferPost() as $item): ?>
                 <div class="col-lg-6 col-md-6">
                     <div class="single-blogs mb-30">
                         <div class="blog-img">
-                            <img src="<?= $item->getPostThumbnailLarge() ?>" alt="">
+                            <img src="<?= $item['programContent'] ?>" alt="">
                         </div>
                         <div class="blog-caption">
-                            <h3><a href="<?= $item->getPermalink(); ?>"><?= $item->getPostTitle(); ?></a></h3>
-                            <p><?= $item->getPostExcerpt(); ?></p>
-                            <a href="<?= $item->getPermalink(); ?>" class="browse-btn">Learn More</a>
+                            <h3><a href="<?= $item['permalink']; ?>"><?= $item['postTitle']; ?></a></h3>
+                            <p><?= $item['postExcerpt']; ?></p>
+                            <a href="<?= $item['permalink']; ?>" class="browse-btn">Learn More</a>
                         </div>
                     </div>
                 </div>

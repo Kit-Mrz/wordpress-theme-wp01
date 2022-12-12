@@ -18,7 +18,7 @@ $comments = $singlePost->getComments();
     <!-- Hero area Start-->
     <?php
     /** @see HeroArea */
-    get_template_part('inc/part/HeroArea', null, ['id' => 1858]);
+    get_template_part('boot/Http/Part/HeroArea', null, ['id' => 1858]);
     ?>
     <!--  Hero area End -->
     <!-- Blog Area Start -->

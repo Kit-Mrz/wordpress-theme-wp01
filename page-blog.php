@@ -2,7 +2,11 @@
 
 use Theme\Boot\Http\Page\PageBlog;
 
+$object = get_queried_object();
+
 $pageBlog = new PageBlog($args ?? []);
+
+$id = $object->ID;
 
 
 ?>
@@ -11,7 +15,7 @@ $pageBlog = new PageBlog($args ?? []);
     <!-- Hero area Start-->
     <?php
     /** @see HeroArea */
-    get_template_part('inc/part/HeroArea', null, ['id' => get_queried_object_id()]);
+    get_template_part('boot/Http/Part/HeroArea', null, ['id' => $id]);
     ?>
     <!--  Hero area End -->
     <!-- Blog Area Start-->

@@ -35,37 +35,37 @@ $index = new Index();
     <!--? About Area  01-->
     <?php
     /** @see About */
-    get_template_part('inc/part/About');
+    get_template_part('boot/Http/Part/About');
     ?>
     <!-- About Area E n d -->
     <!--? Blog Ara S t a r t -->
     <?php
     /** @see ProgramsOffer */
-    get_template_part('inc/part/ProgramsOffer', null, ["postIds" =>  [1872, 1877] ]);
+    get_template_part('boot/Http/Part/ProgramsOffer', null, ["postIds" =>  [1872, 1877] ]);
     ?>
     <!-- Services Ara E n d -->
     <!--? Visit Our t h r e e -->
     <?php
     /** @see EssentialResources */
-    get_template_part('inc/part/EssentialResources', null, ["postIds" => [1870, 1872, 1877]]);
+    get_template_part('boot/Http/Part/EssentialResources', null, ["postIds" => [1870, 1872, 1877]]);
     ?>
     <!-- Visit Our Tailor E n d -->
     <!--? Class-offer-area S t a r t -->
     <?php
     /** @see TopStories */
-    get_template_part('inc/part/TopStories', null, ['postIds' => [1870, 1872, 1877]]);
+    get_template_part('boot/Http/Part/TopStories', null, ['postIds' => [1870, 1872, 1877]]);
     ?>
     <!-- Class-offer-area E n d -->
     <!--? Brand Area S t a r t -->
     <?php
     /** @see OurPartners */
-    get_template_part('inc/part/OurPartners');
+    get_template_part('boot/Http/Part/OurPartners');
     ?>
     <!-- Brand Area E n d -->
     <!--? Visit o n e -->
     <?php
     /** @see TrustedStudents */
-    get_template_part('inc/part/TrustedStudents', null, ["postIds" =>  [1872] ]);
+    get_template_part('boot/Http/Part/TrustedStudents', null, ["postIds" =>  [1872] ]);
     ?>
     <!-- Visit Our Tailor E n d -->
 </main>

@@ -22,22 +22,22 @@ use Theme\Boot\Http\Part\InstagramFeeds;
 
     <?php
     /** @see Category */
-    get_template_part('inc/part/Category', null, ['id' => get_queried_object_id()]);
+    get_template_part('boot/Http/Part/Category', null, ['id' => get_queried_object_id()]);
     ?>
 
     <?php
     /** @see RecentPost */
-    get_template_part('inc/part/RecentPost', null, ['id' => get_queried_object_id()]);
+    get_template_part('boot/Http/Part/RecentPost', null, ['id' => get_queried_object_id()]);
     ?>
 
     <?php
     /** @see TagClouds */
-    get_template_part('inc/part/TagClouds', null, ['id' => get_queried_object_id()]);
+    get_template_part('boot/Http/Part/TagClouds', null, ['id' => get_queried_object_id()]);
     ?>
 
     <?php
     /** @see InstagramFeeds */
-    get_template_part('inc/part/InstagramFeeds', null, ['id' => get_queried_object_id()]);
+    get_template_part('boot/Http/Part/InstagramFeeds', null, ['id' => get_queried_object_id()]);
     ?>
 
     <aside class="single_sidebar_widget newsletter_widget">

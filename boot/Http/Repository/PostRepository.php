@@ -157,11 +157,11 @@ class PostRepository
         $dto = [];
 
         $params = [
-            'post_type'      => 'post',
-            'posts_per_page' => 4,
+            'post_type'           => 'post',
+            'posts_per_page'      => 4,
             'ignore_sticky_posts' => true,
-            'orderby'        => 'date',
-            'order'          => 'DESC',
+            'orderby'             => 'date',
+            'order'               => 'DESC',
         ];
 
         // 实例化查询对象
@@ -182,4 +182,42 @@ class PostRepository
 
         return $dto;
     }
+
+    /**
+     * @desc
+     * @param array $postIns
+     * @return PostDto[]
+     */
+    public function queryPrograms(array $postIns) : array
+    {
+        $dto = [];
+
+        $params = [
+            'post_type'           => 'program',
+            'posts_per_page'      => 8,
+            'ignore_sticky_posts' => true,
+            'post__in'            => $postIns,
+            'orderby'             => 'date',
+            'order'               => 'DESC',
+        ];
+
+        // 实例化查询对象
+        $myQuery = new WP_Query($params);
+
+        if ($myQuery->have_posts()) {
+            while ($myQuery->have_posts()) {
+                //
+                $myQuery->the_post();
+                /** @var \WP_Post $post */
+                global $post;
+
+                $dto[] = ConvertUtil::convertPostDto($post);
+            }
+        }
+
+        wp_reset_postdata();
+
+        return $dto;
+    }
+
 }
