@@ -1,7 +1,6 @@
 <?php
-namespace Wp01;
 
-use Wp01\Inc\Page\Index;
+use Theme\Boot\Http\Page\Index;
 
 $index = new Index();
 ?>

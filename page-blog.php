@@ -1,7 +1,6 @@
 <?php
-namespace Wp01;
 
-use Wp01\Inc\Page\PageBlog;
+use Theme\Boot\Http\Page\PageBlog;
 
 $pageBlog = new PageBlog($args ?? []);
 

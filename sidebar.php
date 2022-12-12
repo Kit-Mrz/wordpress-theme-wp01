@@ -1,10 +1,6 @@
 <?php
-namespace Wp01;
 
-use Wp01\Inc\Page\Sidebar;
-use Wp01\Inc\Part\InstagramFeeds;
-
-$sidebar = new Sidebar();
+use Theme\Boot\Http\Part\InstagramFeeds;
 
 ?>
 <div class="blog_right_sidebar">

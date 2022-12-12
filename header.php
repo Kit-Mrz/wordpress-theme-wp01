@@ -1,8 +1,7 @@
 <?php
-namespace Wp01;
 
-use Wp01\Inc\Page\Header;
-use Wp01\Inc\Util\GeneralUtil;
+use Theme\Boot\Http\Page\Header;
+use Theme\Boot\Http\Util\GeneralUtil;
 
 $header = new Header();
 

@@ -1,9 +1,4 @@
 <?php
-namespace Wp01;
-
-use Wp01\Inc\Page\Footer;
-
-$footer = new Footer();
 
 ?>
 <footer>

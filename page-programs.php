@@ -1,9 +1,4 @@
 <?php
-namespace Wp01;
-
-use Wp01\Inc\Page\PagePrograms;
-
-$pagePrograms = new PagePrograms();
 
 ?>
 <?php get_header(); ?>

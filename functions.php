@@ -1,7 +1,8 @@
 <?php
-namespace Wp01;
 
-use Wp01\Inc\Util\GeneralUtil;
+require str_replace('\\', DIRECTORY_SEPARATOR, __DIR__) . '/boot/vendor/autoload.php';
+
+use Theme\Boot\Http\Util\GeneralUtil;
 
 class Functions
 {
@@ -126,38 +127,38 @@ class Functions
         register_sidebar($defaults);
     }
 
-    // 自动加载注册
-    private static function autoloadRegister()
-    {
-        spl_autoload_register([self::class, 'autoloadClass']);
-    }
-
-    // 自动加载器
-    private static function autoloadClass(string $className)
-    {
-        $className = str_replace('\\', DIRECTORY_SEPARATOR, $className);
-
-        // 命名空间 Wp01/Inc
-        $namespacePrefix = __NAMESPACE__ . '/Inc';
-        //
-        if (strpos($className, $namespacePrefix) !== false) {
-            $tempName = str_replace('/', ' ', $className);
-
-            $tempName = ucfirst($tempName);
-
-            $tempName = str_replace(' ', '/', $tempName);
-
-            $tempName = str_replace(__NAMESPACE__, '', $tempName);
-
-            $classPath = get_theme_file_path() . "{$tempName}.php";
-
-            require $classPath;
-        }
-    }
+//    // 自动加载注册
+//    private static function autoloadRegister()
+//    {
+//        spl_autoload_register([self::class, 'autoloadClass']);
+//    }
+//
+//    // 自动加载器
+//    private static function autoloadClass(string $className)
+//    {
+//        $className = str_replace('\\', DIRECTORY_SEPARATOR, $className);
+//
+//        // 命名空间 Wp01/Inc
+//        $namespacePrefix = __NAMESPACE__ . '/Inc';
+//        //
+//        if (strpos($className, $namespacePrefix) !== false) {
+//            $tempName = str_replace('/', ' ', $className);
+//
+//            $tempName = ucfirst($tempName);
+//
+//            $tempName = str_replace(' ', '/', $tempName);
+//
+//            $tempName = str_replace(__NAMESPACE__, '', $tempName);
+//
+//            $classPath = get_theme_file_path() . "{$tempName}.php";
+//
+//            require $classPath;
+//        }
+//    }
 
     public static function main()
     {
-        self::autoloadRegister();
+//        self::autoloadRegister();
         new self();
     }
 }

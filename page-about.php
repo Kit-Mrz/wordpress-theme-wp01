@@ -1,9 +1,4 @@
 <?php
-namespace Wp01;
-
-use Wp01\Inc\Page\PageAbout;
-
-$pageAbout = new PageAbout();
 
 ?>
 
@@ -47,4 +42,3 @@ $pageAbout = new PageAbout();
     <!-- Visit Our Tailor E n d -->
 </main>
 <?php get_footer() ?>
-<?php $pageAbout = null; ?>

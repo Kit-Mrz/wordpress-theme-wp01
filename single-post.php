@@ -1,8 +1,6 @@
 <?php
-namespace Wp01;
 
-use Wp01\Inc\Page\SinglePost;
-use Wp01\Inc\Repository\CommentRepository;
+use Theme\Boot\Http\Page\SinglePost;
 
 $singlePost = new SinglePost($args ?? [
     'queriedObject' => get_queried_object(),

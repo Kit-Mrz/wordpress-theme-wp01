@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Theme\\Boot\\": "../boot"
+        }
+    },
+    "require": {
+        "symfony/var-dumper": "^5.4"
+    }
+}
