@@ -8,8 +8,27 @@ $pageBlog = new PageBlog($args ?? []);
 
 $id = $object->ID;
 
+//// 当前页
+//$paged = $_GET['paged'] ?? 0;
+//// 每页数
+//$perPage = 0;
+//// 最大页
+//$maxNumPages = 0;
+//
+//if (isset($GLOBALS['wp_query'])) {
+//    $wq = $GLOBALS['wp_query'];
+//
+//    if (isset($wq->query_vars['posts_per_page'])) {
+//        $perPage = $wq->query_vars['posts_per_page'];
+//    }
+//
+//    if (isset($wq->max_num_pages) && $wq->max_num_pages > 0) {
+//        $maxNumPages = $wq->max_num_pages;
+//    }
+//}
 
 ?>
+
 <?php get_header(); ?>
 <main>
     <!-- Hero area Start-->
@@ -57,31 +76,34 @@ $id = $object->ID;
                         <!-- Blot Item end -->
                         <nav class="blog-pagination justify-content-center d-flex">
 
-                            <ul class="pagination">
-                                <ul class="pagination">
-                                    <li class="page-item">
-                                        <a href="#" class="page-link" aria-label="Previous">
-                                            <i class="ti-angle-left"></i>
-                                        </a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link">1</a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a href="#" class="page-link">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link" aria-label="Next">
-                                            <i class="ti-angle-right"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </ul>
+<!--                            <ul class="pagination">-->
+<!--                                <ul class="pagination">-->
+<!--                                    <li class="page-item">-->
+<!--                                        <a href="#" class="page-link" aria-label="Previous">-->
+<!--                                            <i class="ti-angle-left"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li class="page-item">-->
+<!--                                        <a href="#" class="page-link">1</a>-->
+<!--                                    </li>-->
+<!--                                    <li class="page-item active">-->
+<!--                                        <a href="#" class="page-link">2</a>-->
+<!--                                    </li>-->
+<!--                                    <li class="page-item">-->
+<!--                                        <a href="#" class="page-link" aria-label="Next">-->
+<!--                                            <i class="ti-angle-right"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </ul>-->
+
+                            <?= get_the_posts_pagination();?>
+
                         </nav>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <?php get_sidebar();?>
+                    <?php get_sidebar(); ?>
                 </div>
             </div>
         </div>

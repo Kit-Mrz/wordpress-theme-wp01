@@ -63,6 +63,8 @@ class PostRepository
             'post_type'           => 'post',
             // 忽略置顶内容
             'ignore_sticky_posts' => true,
+            'paged'               => $inputParams['paged'] ?? 0,
+            'posts_per_page'      => $inputParams['postsPerPage' ?? 10],
         ];
 
         // 实例化查询对象
@@ -122,9 +124,9 @@ class PostRepository
 'ignore_sticky_posts' => true,
 'meta_query'          => [
     [
-        'posts_per_page' => 6,
-        'key'            => '_thumbnail_id',
-        'compare'        => 'EXISTS'
+
+        'key'     => '_thumbnail_id',
+        'compare' => 'EXISTS'
     ],
 ],
         ];

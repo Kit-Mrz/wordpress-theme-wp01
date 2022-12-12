@@ -40,8 +40,11 @@ class PageBlog
 
     protected function initPosts()
     {
+        $inputParams = [
+            'paged' => $_GET['paged'] ?? 1,
+        ];
         // 默认查询最新的
-        $this->posts = PostRepository::getInstance()->queryPostSlipPage([]);
+        $this->posts = PostRepository::getInstance()->queryPostSlipPage($inputParams);
     }
 
     /**
